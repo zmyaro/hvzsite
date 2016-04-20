@@ -15,22 +15,27 @@ const Router = Ember.Router.extend({
         if (result.profile) {
           if (result.profile.team === 'human') {
             Ember.$('meta[name=theme-color]').prop('content', '#eb4600');
+            Ember.$('meta[name=msapplication-navbutton-color]').prop('content', '#eb4600');
           }
           else {
             Ember.$('meta[name=theme-color]').prop('content', '#00af04');
+            Ember.$('meta[name=msapplication-navbutton-color]').prop('content', '#00af04');
           }
         }
         else {
           Ember.$('meta[name=theme-color]').prop('content', '#3a3a3a');
+          Ember.$('meta[name=msapplication-navbutton-color]').prop('content', '#3a3a3a');
         }
       }).catch((err) => {
         console.error('Unable to retrieve user info for theme');
         console.error(err);
         Ember.$('meta[name=theme-color]').prop('content', '#3a3a3a');
+        Ember.$('meta[name=msapplication-navbutton-color]').prop('content', '#3a3a3a');
       });
     }
     else {
       Ember.$('meta[name=theme-color]').prop('content', '#3a3a3a');
+      Ember.$('meta[name=msapplication-navbutton-color]').prop('content', '#3a3a3a');
     }
   }
 });
